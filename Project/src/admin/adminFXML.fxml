@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.adminController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="950.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="TeacherInfo">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="229.0" layoutY="-1.0" prefHeight="570.0" prefWidth="722.0">
+                           <children>
+                              <TableView fx:id="teachertable" prefHeight="570.0" prefWidth="949.0">
+                                <columns>
+                                  <TableColumn fx:id="Tcolumn1" prefWidth="147.99999690055847" text="teacher_ID" />
+                                  <TableColumn fx:id="Tcolumn2" prefWidth="99.99996948242188" text="teacher_name " />
+                                    <TableColumn fx:id="Tcolumn3" prefWidth="141.6000518798828" text="teacher_surname " />
+                                    <TableColumn fx:id="Tcolumn4" prefWidth="162.39996337890625" text="teacher_Office_number " />
+                                    <TableColumn fx:id="Tcolumn5" prefWidth="162.39996337890625" text="teacher_Phone_number " />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <Button layoutY="208.0" mnemonicParsing="false" onAction="#loadStudentData1" prefHeight="40.0" prefWidth="100.0" text="LOAD" />
+                        <Button layoutY="168.0" mnemonicParsing="false" onAction="#addStudent1" prefHeight="40.0" prefWidth="100.0" text="ADD" />
+                        <TextField fx:id="teacher_ID" layoutX="-1.0" layoutY="30.0" prefHeight="26.0" prefWidth="228.0" promptText="teacher_ID" />
+                        <TextField fx:id="teacher_name" layoutY="56.0" prefHeight="26.0" prefWidth="226.0" promptText="teacher_name" />
+                        <TextField fx:id="teacher_surname" layoutY="82.0" prefHeight="26.0" prefWidth="227.0" promptText="teacher_surname" />
+                        <TextField fx:id="teacher_Office_number" layoutY="108.0" prefHeight="26.0" prefWidth="227.0" promptText="teacher_Office_number" />
+                        <TextField fx:id="teacher_Phone_number" layoutY="134.0" prefHeight="26.0" prefWidth="227.0" promptText="teacher_Phone_number" />
+                        <Button layoutY="248.0" mnemonicParsing="false" onAction="#clearField2" prefHeight="40.0" prefWidth="100.0" text="CLEAR" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="LectureInfo">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="228.0" layoutY="-2.0" prefHeight="562.0" prefWidth="721.0">
+                           <children>
+                              <TableView fx:id="lecturetable">
+                                <columns>
+                                  <TableColumn fx:id="L1" prefWidth="144.00001525878906" text="lectureID" />
+                                  <TableColumn fx:id="L2" prefWidth="132.79998779296875" text="lecture_name" />
+                                    <TableColumn fx:id="L3" prefWidth="164.0" text="lecture_classnumber" />
+                                    <TableColumn fx:id="L5" prefWidth="164.0" text="teacher_ID" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="lectureID" layoutY="39.0" prefHeight="26.0" prefWidth="226.0" promptText="lectureID" />
+                        <TextField fx:id="lecture_name" layoutY="65.0" prefHeight="26.0" prefWidth="227.0" promptText="lecture_name" />
+                        <TextField fx:id="lecture_classnumber" layoutY="91.0" prefHeight="26.0" prefWidth="228.0" promptText="lecture_classnumber" />
+                        <Button layoutY="153.0" mnemonicParsing="false" onAction="#addStudent2" prefHeight="40.0" prefWidth="100.0" text="ADD" />
+                        <Button layoutY="193.0" mnemonicParsing="false" onAction="#loadStudentData2" prefHeight="40.0" prefWidth="100.0" text="LOAD" />
+                        <TextField fx:id="teacher_ID1" layoutY="117.0" prefHeight="26.0" prefWidth="227.0" promptText="teacher_ID1" />
+                        <Button layoutY="233.0" mnemonicParsing="false" onAction="#clearField3" prefHeight="40.0" prefWidth="100.0" text="CLEAR" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Students">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="950.0">
+                     <children>
+                        <HBox layoutX="271.0" layoutY="-1.0" prefHeight="571.0" prefWidth="681.0">
+                           <children>
+                              <TableView fx:id="studenttable" prefHeight="571.0" prefWidth="681.0">
+                                <columns>
+                                  <TableColumn fx:id="idcolumn" prefWidth="92.79998779296875" text="studentID" />
+                                  <TableColumn fx:id="firstnamecolumn" prefWidth="107.99993896484375" text="name" />
+                                    <TableColumn fx:id="lastnamecolumn" prefWidth="132.0" text="surname" />
+                                    <TableColumn fx:id="yearOnClasscolumn" prefWidth="101.5999755859375" text="yearOnClass" />
+                                    <TableColumn fx:id="agecolumn" prefWidth="112.7999267578125" text="age" />
+                                    <TableColumn fx:id="Lecture_ID10" prefWidth="191.2000732421875" text="lectureID" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="lecture_ID1" layoutY="-1.0" prefHeight="570.0" prefWidth="270.0" AnchorPane.leftAnchor="0.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="110.0" text="ADD Students">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="id" promptText="studentID" />
+                              <TextField fx:id="firstname" layoutX="10.0" layoutY="28.0" promptText="name" />
+                              <TextField fx:id="lastname" layoutX="10.0" layoutY="28.0" promptText="surname" />
+                              <TextField fx:id="yearOnClass" layoutX="10.0" layoutY="105.0" promptText="yearOnClass" />
+                              <TextField fx:id="age" layoutX="10.0" layoutY="208.0" promptText="age" />
+                              <TextField fx:id="Lecture_ID1" layoutX="10.0" layoutY="131.0" promptText="Lecture_ID1" />
+                              <Button mnemonicParsing="false" onAction="#addStudent" prefHeight="40.0" prefWidth="100.0" text="ADD" />
+                              <Button layoutX="10.0" layoutY="233.0" mnemonicParsing="false" onAction="#clearField" prefHeight="40.0" prefWidth="100.0" text="CLEAR">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="259.0" mnemonicParsing="false" onAction="#loadStudentData" prefHeight="40.0" prefWidth="100.0" text="LOAD DATA" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="StudentAdress">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="210.0" prefHeight="568.0" prefWidth="740.0">
+                           <children>
+                              <TableView fx:id="adresstable" prefHeight="568.0" prefWidth="752.0">
+                                <columns>
+                                  <TableColumn fx:id="Acolumn" prefWidth="75.0" text="city" />
+                                  <TableColumn fx:id="Acolumn2" prefWidth="75.0" text="street" />
+                                    <TableColumn fx:id="Acolumn3" prefWidth="75.0" text="postalCode" />
+                                    <TableColumn fx:id="Acolumn4" prefWidth="75.0" text="country" />
+                                    <TableColumn fx:id="Acolumn5" prefWidth="75.0" text="studentID" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="city" layoutY="28.0" prefHeight="26.0" prefWidth="210.0" promptText="city" />
+                        <TextField fx:id="street" layoutY="54.0" prefHeight="26.0" prefWidth="210.0" promptText="street" />
+                        <TextField fx:id="postalCode" layoutY="80.0" prefHeight="26.0" prefWidth="210.0" promptText="postalCode" />
+                        <TextField fx:id="country" layoutY="106.0" prefHeight="26.0" prefWidth="210.0" promptText="country" />
+                        <TextField fx:id="studentID1" layoutY="132.0" prefHeight="26.0" prefWidth="209.0" promptText="studentID1" />
+                        <Button layoutY="165.0" mnemonicParsing="false" onAction="#addStudent3" prefHeight="40.0" prefWidth="100.0" text="ADD" />
+                        <Button layoutY="205.0" mnemonicParsing="false" onAction="#loadStudentData3" prefHeight="40.0" prefWidth="100.0" text="LOAD" />
+                        <Button layoutY="245.0" mnemonicParsing="false" onAction="#clearField4" prefHeight="40.0" prefWidth="100.0" text="CLEAR" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Untitled Tab">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="570.0" prefWidth="1203.0">
+                     <children>
+                        <Button layoutX="30.0" layoutY="43.0" mnemonicParsing="false" onAction="#procedure1" prefHeight="30.0" prefWidth="140.0" text="age more than 21" />
+                        <TextArea fx:id="textA" layoutX="390.0" layoutY="1.0" prefHeight="568.0" prefWidth="571.0" />
+                        <Button layoutX="30.0" layoutY="201.0" mnemonicParsing="false" onAction="#func1" prefHeight="30.0" prefWidth="140.0" text="AGE*AGE" />
+                        <TextField fx:id="textB" layoutX="197.0" layoutY="203.0" prefHeight="26.0" prefWidth="103.0" />
+                        <Button layoutX="30.0" layoutY="90.0" mnemonicParsing="false" onAction="#procedure4" prefHeight="30.0" prefWidth="140.0" text="count studentID" />
+                        <Button layoutX="30.0" layoutY="144.0" mnemonicParsing="false" onAction="#procedure5" prefHeight="30.0" prefWidth="140.0" text="count lectureID" />
+                        <Button fx:id="buttonback" layoutX="60.0" layoutY="455.0" mnemonicParsing="false" onAction="#goBack" text="GoBack" />
+                        <Button layoutX="74.0" layoutY="285.0" mnemonicParsing="false" onAction="#view1" text="Button" />
+                        <Button layoutX="74.0" layoutY="325.0" mnemonicParsing="false" onAction="#view2" text="Button" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
